@@ -1,0 +1,12 @@
+<div>
+    <h2>Discharge Details</h2>
+    <div>
+        <p><strong>Discharge ID:</strong> {{ discharge.dischargeId }}</p>
+        <p><strong>Patient ID:</strong> {{ discharge.patientID }}</p>
+        <p><strong>Admission ID:</strong> {{ discharge.admissionID }}</p>
+        <p><strong>Discharge Date:</strong> {{ discharge.dischargeDate | date: 'yyyy-MM-dd HH:mm' }}</p>
+        <p><strong>Reason:</strong> {{ discharge.reason }}</p>
+        <p><strong>Discharge Instructions:</strong> {{ discharge.dischargeInstructions }}</p>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+<div>
+    <h2>Discharge List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Discharge ID</th>
+                <th>Patient ID</th>
+                <th>Admission ID</th>
+                <th>Discharge Date</th>
+                <th>Reason</th>
+                <th>Discharge Instructions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let discharge of discharges">
+                <td>{{ discharge.dischargeId }}</td>
+                <td>{{ discharge.patientID }}</td>
+                <td>{{ discharge.admissionID }}</td>
+                <td>{{ discharge.dischargeDate | date: 'yyyy-MM-dd HH:mm' }}</td>
+                <td>{{ discharge.reason }}</td>
+                <td>{{ discharge.dischargeInstructions }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

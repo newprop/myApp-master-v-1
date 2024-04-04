@@ -1,0 +1,47 @@
+<div>
+  <h2>Edit Emergency</h2>
+  <form (ngSubmit)="OnSubmit()">
+    <div>
+      <label for="emergencyId">Emergency ID:</label>
+      <input type="number" id="emergencyId" name="emergencyId" [(ngModel)]="model.emergencyId" disabled>
+    </div>
+    <div>
+      <label for="patientId">Patient ID:</label>
+      <input type="number" id="patientId" name="patientId" [(ngModel)]="model.patientID">
+    </div>
+    <div>
+      <label for="doctorId">Doctor ID:</label>
+      <input type="number" id="doctorId" name="doctorId" [(ngModel)]="model.doctorID">
+    </div>
+    <div>
+      <label for="departmentId">Department ID:</label>
+      <input type="number" id="departmentId" name="departmentId" [(ngModel)]="model.departmentID">
+    </div>
+    <div>
+      <label for="prescribeId">Prescribe ID:</label>
+      <input type="number" id="prescribeId" name="prescribeId" [(ngModel)]="model.prescribeID">
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" [(ngModel)]="model.location">
+    </div>
+    <div>
+      <label for="emergencyDateTime">Emergency Date Time:</label>
+      <input type="datetime-local" id="emergencyDateTime" name="emergencyDateTime" [(ngModel)]="model.emergencyDateTime">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="model.description"></textarea>
+    </div>
+    <div>
+      <label for="severity">Severity:</label>
+      <input type="text" id="severity" name="severity" [(ngModel)]="model.severity">
+    </div>
+    <div>
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status" [(ngModel)]="model.status">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+

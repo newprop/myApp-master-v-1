@@ -1,0 +1,28 @@
+<h2>Staff List</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Contact No</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let staff of staffList">
+            <td>{{ staff.staffId }}</td>
+            <td>{{ staff.staffName }}</td>
+            <td>{{ staff.designation }}</td>
+            <td>{{ staff.contactNo }}</td>
+            <td>{{ staff.email }}</td>
+            <td>
+                <button class="btn btn-info" (click)="viewStaffDetails(staff.staffId)">View</button>
+                <button class="btn btn-primary" (click)="editStaff(staff.staffId)">Edit</button>
+                <button class="btn btn-danger" (click)="deleteStaff(staff.staffId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

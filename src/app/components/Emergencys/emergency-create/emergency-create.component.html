@@ -1,0 +1,78 @@
+
+<form #Form="ngForm" (submit)="OnSubmit()">
+
+    <div class="emergency-form">
+        <h2>Create Emergency</h2>
+
+
+        <div class="form-group row">
+            <label for="patientID" class="col-md-4">Patient Name: </label>
+            <select id="patientID"
+                    name="name"
+                    class="form-control-sm  col-md-8"
+                    required
+                    [(ngModel)]="model.patientID"
+                    #patID="ngModel">
+                <option *ngFor="let patient  patID" [value]="patient.patientId">
+                    {{patient.name}}
+                </option>
+            </select>
+            <div *ngIf="patID.invalid && (patID.dirty && patID.touched)"
+                 class="alert">
+                Select Patient Name.
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="doctorID" class="col-md-4">Doctor Name: </label>
+            <select id="doctorID"
+                    name="name"
+                    class="form-control-sm  col-md-8"
+                    required
+                    [(ngModel)]="model.doctorId"
+                    #docID="ngModel">
+                <option *ngFor="let Doctor of doctor" [value]="Doctor.doctorId">
+                    {{Doctor.name}}
+                </option>
+            </select>
+            <div *ngIf="docID.invalid && (docID.dirty && docID.touched)"
+                 class="alert">
+                Select Doctor Name.
+            </div>
+        </div>
+
+        <!--  <div class="form-group">
+        <label for="doctorId">Doctor ID:</label>
+        <input type="number" class="form-control" id="doctorId" name="doctorId" [(ngModel)]="model.doctorID">
+    </div> -->
+        <div class="form-group">
+            <label for="departmentId">Department ID:</label>
+            <input type="number" class="form-control" id="departmentId" name="departmentId" [(ngModel)]="model.departmentID">
+        </div>
+        <div class="form-group">
+            <label for="prescribeId">Prescribe ID:</label>
+            <input type="number" class="form-control" id="prescribeId" name="prescribeId" [(ngModel)]="model.prescribeID">
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" [(ngModel)]="model.location">
+        </div>
+        <div class="form-group">
+            <label for="emergencyDateTime">Emergency Date Time:</label>
+            <input type="datetime-local" class="form-control" id="emergencyDateTime" name="emergencyDateTime" [(ngModel)]="model.emergencyDateTime">
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" [(ngModel)]="model.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="severity">Severity:</label>
+            <input type="text" class="form-control" id="severity" name="severity" [(ngModel)]="model.severity">
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <input type="text" class="form-control" id="status" name="status" [(ngModel)]="model.status">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+    </form>

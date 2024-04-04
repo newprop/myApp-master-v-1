@@ -1,0 +1,34 @@
+<div *ngIf="staff">
+    <h2>Edit Staff</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="staffName">Staff Name:</label>
+            <input type="text" class="form-control" id="staffName" name="staffName" [(ngModel)]="staff.staffName">
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input type="text" class="form-control" id="designation" name="designation" [(ngModel)]="staff.designation">
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="staff.address">
+        </div>
+        <div class="form-group">
+            <label for="contactNo">Contact No:</label>
+            <input type="text" class="form-control" id="contactNo" name="contactNo" [(ngModel)]="staff.contactNo">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="staff.email">
+        </div>
+        <div class="form-group">
+            <label for="shift">Shift:</label>
+            <select class="form-control" id="shift" name="shift" [(ngModel)]="staff.shift">
+                <option value="Morning_6am_To_2pm">Morning 6am to 2pm</option>
+                <option value="Afternoon_2pm_To_10pm">Afternoon 2pm to 10pm</option>
+                <option value="Night_10pm_To_6am">Night 10pm to 6am</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

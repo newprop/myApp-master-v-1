@@ -1,0 +1,44 @@
+<a routerLink="/EmergencyCreate/create" class="btn btn-info">Add New</a>
+<a routerLink="/dischargeCreate/create" class="btn btn-info">Add New discharge</a>
+<a routerLink="/dischargeCreate/create" class="btn btn-info">Add New discharge</a>
+
+
+<div>
+  <h2>Emergency List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Emergency ID</th>
+        <th>Patient ID</th>
+        <th>Doctor ID</th>
+        <th>Department ID</th>
+        <th>Prescribe ID</th>
+        <th>Location</th>
+        <th>Emergency Date Time</th>
+        <th>Description</th>
+        <th>Severity</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of emergency">
+        <td>{{ item.emergencyId }}</td>
+        <td>{{ item.patientID }}</td>
+        <td>{{ item.doctorID }}</td>
+        <td>{{ item.departmentID }}</td>
+        <td>{{ item.prescribeID }}</td>
+        <td>{{ item.location }}</td>
+        <td>{{ item.emergencyDateTime }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.severity }}</td>
+        <td>{{ item.status }}</td>
+        <td>           
+            <a [routerLink]="['/EmergencyEdit/edit/', item.emergencyId]" class="btn btn-warning">Edit</a>
+            <button (click)="DeleteProducts(item)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

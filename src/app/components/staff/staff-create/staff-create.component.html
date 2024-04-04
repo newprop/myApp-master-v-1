@@ -1,0 +1,43 @@
+<h2>Create New Staff</h2>
+
+<form #staffForm="ngForm" (ngSubmit)="onSubmit(staffForm)">
+    <div class="form-group">
+        <label for="staffName">Staff Name:</label>
+        <input type="text" class="form-control" id="staffName" name="staffName" required [(ngModel)]="model.staffName" #staffName="ngModel">
+        <div *ngIf="staffName.invalid && staffName.touched" class="alert alert-danger">
+            Staff Name is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="designation">Designation:</label>
+        <input type="text" class="form-control" id="designation" name="designation" [(ngModel)]="model.designation">
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address" [(ngModel)]="model.address">
+    </div>
+
+    <div class="form-group">
+        <label for="contactNo">Contact Number:</label>
+        <input type="text" class="form-control" id="contactNo" name="contactNo" [(ngModel)]="model.contactNo">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="model.email">
+    </div>
+
+    <div class="form-group">
+        <label for="shift">Shift:</label>
+        <select class="form-control" id="shift" name="shift" [(ngModel)]="model.shift">
+            <option [ngValue]="ShiftType.Morning_6am_To_2pm">Morning 6am to 2pm</option>
+            <option [ngValue]="ShiftType.Afternoon_2pm_To_10pm">Afternoon 2pm to 10pm</option>
+            <option [ngValue]="ShiftType.Night_10pm_To_6am">Night 10pm to 6am</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="staffForm.invalid">Submit</button>
+</form>
+

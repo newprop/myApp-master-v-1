@@ -1,0 +1,40 @@
+
+
+
+    <div class="emergency-details">
+        <h2>Emergency Details</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Emergency ID</th>
+                    <th>Patient ID</th>
+                    <th>Doctor ID</th>
+                    <th>Department ID</th>
+                    <th>Prescribe ID</th>
+                    <th>Location</th>
+                    <th>Emergency Date Time</th>
+                    <th>Description</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of emergency">
+                    <td>{{ item.emergencyId }}</td>
+                    <td>{{ item.patientID }}</td>
+                    <td>{{ item.doctorID }}</td>
+                    <td>{{ item.departmentID }}</td>
+                    <td>{{ item.prescribeID }}</td>
+                    <td>{{ item.location }}</td>
+                    <td>{{ item.emergencyDateTime }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.severity }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="DeletePatient(item)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
